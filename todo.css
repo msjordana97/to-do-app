@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Tsukimi+Rounded:wght@600&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.top {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+h1 {
+    position: absolute;
+    top: 30px;
+    text-transform: uppercase;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Times, serif, Courier, monospace;
+}
+.todo-app-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    min-height: 100vh;
+    background-image:linear-gradient(to bottom, pink, lightblue);
+}
+
+.todo-container {
+    font-family: 'Tsukimi Rounded', sans-serif;
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    border:1px solid #000;
+    box-shadow: 7px 7px #00000042;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+.todo-header {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.todo-title {
+    font-family: 'Tsukimi Rounded', sans-serif;
+    position: inherit;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#task-input {
+    width: 85%;
+    font-size: 1rem;
+    padding:5px 1rem;
+    border:1px solid #000;
+}
+textarea:focus, input:focus {
+    outline: none;
+}
+#add-task-icon {
+    margin: 0 0 0 10px;
+    display: inline-block;
+    background-color: #039deb;
+    padding: 10px;
+    border: 1px solid #000000;
+}
+#add-task-icon svg {
+    fill:black;
+    width: 25px;
+    height: 25px;
+}
+#add-task-icon:hover {
+    cursor: pointer;
+    background-color: #d4eb03;
+}
+#add-task-icon:disabled {
+    background-color: #ccc;
+}
+
+.todo-tasks-list {
+    width: 100%;
+    padding: 10px;
+}
+.task-item {
+    font-size: 1rem;
+    padding: 10px 0px;
+    border-bottom: 1px solid #00000059;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .25s all ease-in;
+    position: relative;
+}
+/*space between siblings*/
+.task-checkbox .task-description {
+    flex-grow: 1;
+}
+/*example list item*/
+.task-item-example { 
+    text-decoration: line-through;
+}
+.delete-task-icon {
+    margin-left: auto;
+}
+.task-item:hover .delete-task-icon {
+    visibility: visible;
+    cursor: pointer;
+}
+.task-description {
+    margin-right: 10px;
+    text-align: left;
+}
+.delete-task-icon {
+    visibility: hidden;
+    height: 100%;
+    padding: 5px;
+    background-color: #f7ffacbc;
+    border: 1px solid #000000;
+}
+.delete-task-icon svg{
+    fill: #d4eb03;
+    width: 25px;
+    height: 25px;
+}
+.task-item:hover .delete-task-icon {
+    visibility: visible;
+    cursor: pointer;
+}
+
+.task-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0 20px 0 0;
+    font: inherit;
+    border: 1px solid #000000;
+    width: 1.8rem;
+    height: 2.05rem;
+    border-radius: 0.15em;
+    /*test*/
+    display: grid;
+    place-content: center;
+}
+.task-checkbox::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 40px;
+    content: '';
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    /*border: 1px solid #000;*/
+    font: inherit;
+}
+.task-checkbox::before {
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 0.15em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: rgb(0, 106, 255);
+    transform-origin:  bottom left;
+    clip-path:polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.task-checkbox:checked::before {
+    transform: scale(1);
+    background-color: #039deb;
+}
+.task-checkbox::before:checked + p{
+    text-decoration: line-through;
+}
+.task-checkbox:hover {
+    cursor: pointer;
+}
