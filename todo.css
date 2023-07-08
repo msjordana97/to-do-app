@@ -101,21 +101,21 @@ textarea:focus, input:focus {
 .task-checkbox .task-description {
     flex-grow: 1;
 }
-/*example list item*/
-.task-item-example { 
-    text-decoration: line-through;
-}
+
 .delete-task-icon {
     margin-left: auto;
 }
+
 .task-item:hover .delete-task-icon {
     visibility: visible;
     cursor: pointer;
 }
+
 .task-description {
     margin-right: 10px;
     text-align: left;
 }
+
 .delete-task-icon {
     visibility: hidden;
     height: 100%;
@@ -123,11 +123,13 @@ textarea:focus, input:focus {
     background-color: #f7ffacbc;
     border: 1px solid #000000;
 }
+
 .delete-task-icon svg{
     fill: #d4eb03;
     width: 25px;
     height: 25px;
 }
+
 .task-item:hover .delete-task-icon {
     visibility: visible;
     cursor: pointer;
@@ -147,6 +149,7 @@ textarea:focus, input:focus {
     display: grid;
     place-content: center;
 }
+
 .task-checkbox::after {
     position: absolute;
     left: 0;
@@ -159,9 +162,9 @@ textarea:focus, input:focus {
     appearance: none;
     background-color: transparent;
     margin: 0;
-    /*border: 1px solid #000;*/
     font: inherit;
 }
+
 .task-checkbox::before {
     content: "";
     width: 1.5em;
@@ -178,9 +181,16 @@ textarea:focus, input:focus {
     transform: scale(1);
     background-color: #039deb;
 }
+
 .task-checkbox::before:checked + p{
     text-decoration: line-through;
 }
+
 .task-checkbox:hover {
     cursor: pointer;
+}
+
+/*Examples*/
+.task-checkbox:checked + .task-description-example {
+    text-decoration: line-through;
 }

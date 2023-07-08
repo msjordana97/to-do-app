@@ -1,13 +1,13 @@
 
 //Algo
 
-//3 Create a list element and add class 'task-item' 
-//4 Create a input element and add class 'task-checkbox' 
-//5 Create a p element and add class 'task-description'
-//6 Create a div element and add class 'delete-task-icon'
-//7 Inside 'delete-task-icon' add svg icon correspondent to it 
-//8 To delete-task-icon add a function to delete the list element when is clicked
-//8 Append all the elements to the parent
+//1 Create a list element and add class 'task-item' 
+//2 Create a input element and add class 'task-checkbox' 
+//3 Create a p element and add class 'task-description'
+//4 Create a div element and add class 'delete-task-icon'
+//5 Inside 'delete-task-icon' add svg icon correspondent to it 
+//6 To delete-task-icon add a function to delete the list element when is clicked
+//7 Append all the elements to the parent
 
 //Variables
 const taskInput = document.getElementById('task-input');
@@ -22,7 +22,7 @@ taskInput.addEventListener('keyup', function() {
     }
 })
 //2 create element li and add class task-item
-var todoContainer = document.querySelector('.todo-tasks-list');
+const todoContainer = document.querySelector('.todo-tasks-list');
 
 addTaskButton.addEventListener('click', ()=> {
     
@@ -81,8 +81,17 @@ addTaskButton.addEventListener('click', ()=> {
         listItem.remove();
     })
 
+   
 })
 
+//Adding functionality to delete container on default example tasks
+var deleteButtons = document.querySelectorAll('.task-item-example .delete-task-icon-example');
 
-
-
+deleteButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        var listItemExample = this.closest('.task-item-example');
+        if (listItemExample) {
+            listItemExample.remove();
+        }
+    });
+})
